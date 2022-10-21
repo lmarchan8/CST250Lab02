@@ -1,0 +1,9 @@
+public class square extends Rectangle {
+
+	public square(int length, int width) {
+		super (length,width);
+	}
+	public square(int width) {
+		super (width,width);
+	}
+}
