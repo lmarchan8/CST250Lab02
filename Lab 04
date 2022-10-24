@@ -1,0 +1,29 @@
+package lab4;
+
+public class lab4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] inputArray = { 12, 21, 5, 7, 188 };
+
+		int arraySize = inputArray.length;
+		for (int i = 0; i < arraySize - 1; i++) {
+			int index = i;
+			for (int j = i + 1; j < arraySize; j++) {
+				if (inputArray[j] < inputArray[index]) {
+					index = j;
+				}
+			}
+			int temp = inputArray[i];
+			inputArray[i] = inputArray[index];
+			inputArray[index] = temp;
+		}
+		for (int i = 0; i < inputArray.length; i++) {
+			System.out.print(inputArray[i]+" ");
+		}
+	
+
+	}
+
+}
