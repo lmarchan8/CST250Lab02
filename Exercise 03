@@ -1,0 +1,18 @@
+
+public class exercies2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char[] name = {'s', 'a', 'b','a'};
+		
+		//Exercise 3
+		//to convert all arrays into an upper case letter
+		for (int i = 0; i < name.length; i++) {
+			int numericalvalueofMychar = (int)name[i];
+			int upperCaseNumericValue =  numericalvalueofMychar - 32;
+			char upperCase = (char)upperCaseNumericValue;
+			System.out.println(upperCase);
+		}
+		
+	}
+}
