@@ -1,0 +1,18 @@
+
+public class Exercises {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] myArray = {-5, 5, -26, 12, 0, 5, 1};
+		
+		//Exercise 1
+		//Goal: write a program that calculates the sum of all Int arrays.
+		
+		int total = 0;
+		for (int i = 0; i < myArray.length; i++) {
+			total = total + myArray[i];
+		}
+		System.out.println(total);
+	}
+
+}
