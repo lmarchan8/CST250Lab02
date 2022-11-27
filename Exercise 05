@@ -1,0 +1,57 @@
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount luisAccount = new BankAccount("Luis Marchan",20);
+		//luisAccount.owner = "Luis Marchan";
+		//luisAccount.balance = 20;
+		
+		luisAccount.deposit(80);
+		luisAccount.withdraw(50);
+		//luisAccount.withdraw(100);
+		
+		//System.out.println(luisAccount.balance);
+		luisAccount.display();
+		
+		BankAccount jiaAccount = new BankAccount("jia",1000000);
+		//jiaAccount.owner = "jia";
+		//jiaAccount.balance = 1000000;
+		
+		//System.out.println(jiaAccount.balance);
+		jiaAccount.display();
+
+	}
+
+}
+
+
+public class BankAccount {
+
+		String owner;
+		double balance;
+		
+		BankAccount(String owner,double balance){
+			this.owner = owner;
+			this.balance = balance;
+		}
+		
+		void deposit(double amount) {
+			balance = balance + amount;
+			
+		}
+		void withdraw(double amount) {
+			if(amount > balance) {
+				System.out.println ("unable to complete this transaction due to insufficient funds");
+				return;
+			}
+			balance = balance - amount;
+		}
+	void display() {
+		System.out.println("=========================");
+		System.out.println(" Owner: " + owner);
+		System.out.println(" Balance: " + balance);
+		System.out.println("=========================");
+	}
+	
+
+}
