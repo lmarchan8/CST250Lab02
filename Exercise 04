@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+public class Ex4 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//ArrayList:
+//		ArrayList<Integer> myCollection= new ArrayList<Integer>();
+		
+//		myCollection.add(5);
+//		myCollection.add(12);
+//		myCollection.add(-5);
+		
+//		System.out.println(myCollection);
+//		myCollection.remove(1);
+//		System.out.println(myCollection);
+		
+		//LinkedList:
+//		LinkedList myLL = new LinkedList();
+//		myLL.add(5);
+//		myLL.add(2.5);
+//		myLL.add(15);
+//		myLL.add("Luis");
+		
+//		System.out.println(myLL);
+//		myLL.remove();
+//		System.out.println(myLL);
+		
+		//FIFO: First in,First Out
+		//Lifo: Last in,Fist out
+		
+		
+		//Queue
+		//Queue<String> myQ = new LinkedList();
+	
+	//	myQ.add("Green");
+	//	myQ.add("yellow");
+	//	myQ.add("blue");
+	//	myQ.add("pink");
+	//	myQ.add("grey");
+		
+//		System.out.println(myQ);
+//		myQ.remove();
+//		System.out.println(myQ);
+//		myQ.remove();
+//		System.out.println(myQ);
+	
+		//stack
+		Stack<String> myStack = new Stack();
+		
+		myStack.push("green");
+		myStack.push("yellow");
+		myStack.push("blue");
+		myStack.push("pink");
+		myStack.push("grey");
+		
+		System.out.println(myStack);
+		myStack.pop();
+		System.out.println(myStack);
+		
+		
+		
+	}
+}
