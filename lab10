@@ -1,0 +1,36 @@
+package lab10;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+
+		Node root = new Node(20);
+		root.left = new Node(15);
+		root.right = new Node(30);
+		root.left.left = new Node(10);
+		root.left.left.right = new Node(12);
+		root.left.right = new Node(15);
+		root.left.left.left = new Node(18);
+	}
+
+}
+
+
+package lab10;
+
+public class Node {
+
+	public int value;
+	public Node left;
+	public Node right;
+	
+	public Node(int value) {
+		this.value = value;
+		this.left = null;
+		this.right = null;
+	}
+	
+	
+	}
+
