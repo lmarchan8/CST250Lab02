@@ -1,0 +1,163 @@
+import java.util.Arrays;
+public class Assigment2 {
+
+	public static void main(String[] args){
+		int[] array0 = {1,5,-5,2,12,30};
+		int[] array1 = {-10,50,15,2};
+		
+		System.out.println("array0 : "+Arrays.toString(array0));
+		System.out.println("array1 : "+Arrays.toString(array1));
+		
+		for (int i = 0; i< array0.length; i++)
+		{
+			for (int j=0; j< array1.length; j++)
+			{
+				if(array0[i] == (array1[j]))
+				{
+					System.out.println("common element of the arrays are :" +(array0[i]));
+}
+			}
+		}
+		
+		
+		
+	}
+
+}
+
+
+import java.util.*;
+import java.io.*;
+
+public class Question2 {
+
+	public static void main(String[] args){
+		//variables
+		int[] array0 = {1,15,-5,4,65,35};
+		int num1 = 65;
+		int num2 = 77;	
+		
+		
+		System.out.println("array0 : "+Arrays.toString(array0));
+		System.out.println("Results :" +result(array0,num1,num2));
+		
+		
+	}
+	
+	public static Boolean result(int[] array0, int num1, int num2) {
+		  for (int number : array0){
+		      boolean r = number != num1 && number != num2;
+		      if (r) {
+		        return false;
+		        }
+		     }
+		        return true;
+		   }
+}
+
+
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class q3 {
+	public static void reverse(char[] arr, int left, int right) {
+        if (left < right) {
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            reverse(arr, left + 1, right - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        char[] arr = {'s', 'a', 'b', 'a'};
+        System.out.print("Original array: ");
+        for (int i = 0; i < arr.length; ++i) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        reverse(arr, 0, arr.length - 1);
+        System.out.print("Reversed array: ");
+        for (int i = 0; i < arr.length; ++i) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}	
+
+
+public class question4 {
+	    boolean isUniqueChars (String str) {
+	        boolean flag[] = new boolean[129];
+	        for(int i = 0;i<129;i++){
+	            flag[i] = false;
+	        }
+	        for(int i = 0;i<str.length();i++){
+	            if(flag[str.charAt(i)]){
+	                return false;
+	            }
+	            else{
+	                flag[str.charAt(i)] = true;
+	            }
+	        }
+	        return true;
+	    }
+
+	    public static void main(String[] args) {
+	        question4 obj = new question4();
+	        System.out.println(obj.isUniqueChars("Saba"));
+	        System.out.println(obj.isUniqueChars("John"));
+	    }
+	}
+
+
+
+public class question5 {
+	static boolean isPalindrome(String str) {
+		int i=0, j=str.length() -1;
+			while(i<j) {
+				if(str.charAt(i) !=str.charAt(j))
+					return false;
+				i++;
+				j--;
+			}
+				return true;
+				
+	}
+	public static void main(String[] args) {
+		String str ="level";
+		if(isPalindrome(str))
+			
+			System.out.print(true);
+		else
+			System.out.print(false);
+	}
+}
+
+
+import java.util.Scanner;
+
+public class question6 {
+
+	   public static void main(String[] args) {
+	   String message ="hello everyone. let's write some useful Java code today. we will begin with strings.";
+	   
+	   char[] charArray = message.toCharArray();
+	   boolean foundSpace = true;
+	   
+	   for(int i = 0; i<charArray.length; i++) {
+		   if(Character.isLetter(charArray[i])) {
+			   if(foundSpace) {
+				   charArray[i] = Character.toUpperCase(charArray[i]);
+				   foundSpace = false;
+			   }
+		   }
+		   else {
+			   foundSpace = true;
+		   }
+	   }
+	   message =String.valueOf(charArray);
+	   System.out.println("message: " +message);
+ }
+}
