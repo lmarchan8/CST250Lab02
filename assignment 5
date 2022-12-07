@@ -1,0 +1,95 @@
+import java.io.*;
+ 
+class Happy {
+	public static void main(String args[])
+	{
+	    String str = " It might seem crazy what I am 'bout to say\r\n"
+	    		+ "Sunshine, she's here, you can take a break\r\n"
+	    		+ "I'm a hot air balloon that could go to space\r\n"
+	    		+ "With the air, like I don't care, baby by the way\r\n"
+	    		+ "Huh (Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Here come bad news talking this and that (Yeah)\r\n"
+	    		+ "Well give me all you got, don't hold back (Yeah)\r\n"
+	    		+ "Well I should probably warn you I'll be just fine (Yeah)\r\n"
+	    		+ "No offense to you don't waste your time\r\n"
+	    		+ "Here's why\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Uh, bring me down\r\n"
+	    		+ "Can't nothing, bring me down\r\n"
+	    		+ "My level's too high to bring me down\r\n"
+	    		+ "Can't nothing, bring me down, I said\r\n"
+	    		+ "Bring me down, can't nothing\r\n"
+	    		+ "Bring me down\r\n"
+	    		+ "My level's too high to bring me down\r\n"
+	    		+ "Can't nothing, bring me down, I said\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Uh, bring me down (Happy, happy, happy, happy)\r\n"
+	    		+ "Can't nothing (Happy, happy, happy, happy)\r\n"
+	    		+ "Bring me down, my level's too high\r\n"
+	    		+ "To bring me down (Happy, happy, happy, happy)\r\n"
+	    		+ "Can't nothing (Happy, happy, happy, happy)\r\n"
+	    		+ "Bring me down, I said\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you (ayy, ayy, ayy)\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Clap along if you feel like a room without a roof\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like happiness is the truth\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you know what happiness is to you (hey)\r\n"
+	    		+ "(Because I'm happy)\r\n"
+	    		+ "Clap along if you feel like that's what you wanna do\r\n"
+	    		+ "Come on ";
+	    String word = " happy ";
+	    System.out.println(countOccurrences(str, word));
+	}
+	
+ 
+static int countOccurrences(String str, String word)
+{
+    
+    String a[] = str.split(" ");
+ 
+    
+    int count = 0;
+    for (int i = 0; i < a.length; i++)
+    {
+
+    if (word.equals(a[i]))
+        count++;
+    }
+ 
+    return count;
+}
+}
+
