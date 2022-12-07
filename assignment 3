@@ -1,0 +1,95 @@
+mport java.util.Queue;
+import java.util.LinkedList;
+public class Main {
+
+	  // main method
+	  public static void main(String[] args) {
+	    // declaring and initializing a queue
+	    Queue<Integer> queue = new LinkedList<>();
+	    int[] array = { 3, 5, 6, 7, 1, 2, 8, 10 };
+	    for (int i = 0; i < array.length; i++) {
+	      queue.add(array[i]); // adding elements to the queue
+	    }
+	  
+	    System.out.println("Queue: " + queue);
+	    System.out.println("Minimum element: " + getMin(queue));}
+	   
+
+	    public static int getMin(Queue<Integer> queue) {
+      
+	      int minValue = queue.peek();
+	      int n = queue.size();
+	
+	      for (int i = 0; i < n; i++) {
+	        if (queue.peek() < minValue) minValue = queue.peek();
+	        queue.add(queue.remove());
+	      }
+	      return minValue;
+	    }
+	  }
+
+
+import java.util.Stack;
+import java.util.Scanner;
+class question2 {
+
+    public static void main(String[] args) {
+//enter the word 
+    	System.out.print("Enter any string:");
+        Scanner in=new Scanner(System.in);
+        String inputString = in.nextLine();
+        Stack stack = new Stack();
+
+        //to determine if palindrome or not
+        for (int i = 0; i < inputString.length(); i++) {
+            stack.push(inputString.charAt(i));
+        }
+
+        String reverseString = "";
+
+        while (!stack.isEmpty()) {
+            reverseString = reverseString+stack.pop();
+        }
+        
+        
+//results 
+        if (inputString.equals(reverseString))
+            System.out.println("This input is a palindrome CONGRATS!!.");
+        else
+            System.out.println("The input is not a palindrome Try again.");
+
+    }
+}
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class question3 {
+
+  // main method
+  public static void main(String[] args) {
+	    String expression = "((a+b)*(c-d))";
+	    System.out.println("Expression: " + expression);
+	    System.out.println("Is balanced: " + isBalanced(expression));}
+	  
+	  
+	    public static boolean isBalanced(String str) {
+	    
+	      Stack<Character> stack = new Stack<>();
+	 
+	      for (int i = 0; i < str.length(); i++) {
+	       
+	        if (str.charAt(i) == '(') {
+	          stack.push(str.charAt(i));
+	        }
+	     
+	        else if (str.charAt(i) == ')') {
+	          if (stack.isEmpty()) return false;
+	          stack.pop();
+	        }
+	      }
+	      return stack.isEmpty();
+	    
+  }
+}
