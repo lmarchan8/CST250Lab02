@@ -1,0 +1,158 @@
+import java.util.Scanner;
+
+//Goal accomplish in this program
+	//1. As an admin, I'd like to register an individual as a person and store their information in a file. 
+	//2. As an admin, I'd like to create checking and/or savings accounts for a given user.
+	//3. As a user, I'd like to validate financial transactions using my zip code.
+
+public class BankInfo {
+	
+	//Variables 
+	private String account;
+	private String name;
+	private double zipcode;
+	private String acct_type;
+	private double balance;
+	Scanner sc = new Scanner(System.in);
+	
+	//Register
+	 public void openAccount() {  
+	        System.out.print("enter Account number: ");  
+	        account = sc.next();  
+	        System.out.print("Enter Account type: ");  
+	        acct_type = sc.next();  
+	        System.out.print("Enter Name: ");  
+	        name = sc.next();  
+	        System.out.print("Enter your zip code: ");  
+	        zipcode = sc.nextDouble();  
+	        System.out.print("Enter Balance: ");  
+	        balance = sc.nextDouble();  
+	        
+	 }
+	
+	//deposit
+	public void deposit() {
+		double atm;
+		System.out.println("Enter Amount you would like to deposit: " );
+		atm = sc.nextDouble();
+		balance = balance + atm;
+		System.out.println("Balance after deposit: " + balance);
+		}
+	
+	//withdraw 
+	public void withdraw() {
+		double atm;
+		System.out.println("Enter Amount you would like to withdraw: " );
+		atm = sc.nextDouble();
+		if(atm > balance) {
+			System.out.println("unable to complete this transaction due to insufficient funds!!!!!!");
+			return;
+		}
+		balance = balance - atm;
+		System.out.println("Balance after withdrawal: " + balance);
+	}
+	//Account details
+	 public void showAccount() {  
+	        System.out.println("Account holder: " + name); 
+	        System.out.println("Account holder's zipcode: " + zipcode);  
+	        System.out.println("Account #.: " + account);  
+	        System.out.println("Account type: " + acct_type);  
+	        System.out.println("Balance: " + balance);  
+		
+	}
+
+  //to confirm with zip code
+    public boolean search(String acct_zip) {  
+        if (account.equals(acct_zip)) {  
+            showAccount();  
+            return (true);  
+        }  
+        return (false);  
+    }  
+}  
+  
+ 
+
+import java.util.Scanner;
+
+//goals
+	//1. As an admin, I'd like to register an individual as a person and store their information in a file. 
+	//2. As an admin, I'd like to create checking and/or savings accounts for a given user.
+	//3. As a user, I'd like to validate financial transactions using my zip code.
+	//4. As an admin, I'd like to audit all completed transactions and report suspicious activities.
+public class MainClass {
+	public static void main(String[] args) {
+		  Scanner sc = new Scanner(System.in);    
+	      System.out.println(" hello how many custermer is it this for: " );  
+	        int n = sc.nextInt();  
+	        BankInfo C[] = new BankInfo[n];  
+	        for (int i = 0; i < C.length; i++) {  
+	            C[i] = new BankInfo();  
+	            C[i].openAccount();  
+	}
+	 int n1 ;
+	  do {  
+		  System.out.println("========================================");
+          System.out.println("\n ^^^Banking System^^^");  
+          System.out.println("1. Account Summary  \n 2. customer lookup with Account No  \n 3. Deposit \n 4. Withdraw \n 5.Exit ");  
+          System.out.println("Enter your choice: ");  
+          System.out.println("========================================");
+          n1 = sc.nextInt();  
+          switch (n1) {  
+          case 1:  
+              for (int i = 0; i < C.length; i++) {  
+                  C[i].showAccount();  
+              }  
+              break;  
+          case 2:  
+              System.out.print("Enter account no. you want to search: ");  
+              String acct_zip = sc.next();  
+              boolean found = false;  
+              for (int i = 0; i < C.length; i++) {  
+                found = C[i].search(acct_zip);  
+                  if (found) {  
+                      break;  
+                  }  
+              }  
+              if (!found) {  
+            	  System.out.println("Search error! Unable to find account!!");   
+              }  
+              break;  
+          case 3:  
+              System.out.print("Enter Account no. : ");  
+              acct_zip = sc.next();  
+              found = false;  
+              for (int i = 0; i < C.length; i++) {  
+                 found = C[i].search(acct_zip); 
+                  if (found) {  
+                      C[i].deposit();  
+                      break;  
+                  }  
+              }  
+              if (!found) {  
+                  System.out.println("Search error! Unable to find account!!");  
+              }  
+              break;  
+          case 4:  
+              System.out.print("Enter Account No : ");  
+              acct_zip = sc.next();  
+              found = false;  
+              for (int i = 0; i < C.length; i++) {  
+                 found = C[i].search(acct_zip);  
+                  if (found) {  
+                      C[i].withdraw();  
+                      break;  
+                  }  
+              }  
+              if (!found) {  
+            	  System.out.println("Search error! Unable to find account!!");  
+              }  
+              break;  
+          case 5:  
+              System.out.println("Thank you, See you Soon!!!");  
+              break;  
+      }  
+  }  
+  while (n1 != 5);  
+}  
+}  
