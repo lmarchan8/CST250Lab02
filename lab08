@@ -1,0 +1,101 @@
+
+public class MainClass {
+	public static void main(String[] args) {
+		user user01 = new user("Luis", "chicago");
+		Tweet tweet01 = user01.tweet("hello everyone! this is my first tweet");
+		tweet01.display();
+		
+		user user02 =  new user("joe");
+		Tweet tweet02 = user02.tweet("Hi! this is joe");
+		tweet02.display();
+				
+	}
+	
+}
+
+import java.time.Instant;
+
+public class Tweet {
+	
+	private String text;
+	private String datetime;
+	private user author;
+	
+	public Tweet(String text, String datetime, user author) {
+		super();
+		this.text = text;
+		this.datetime = datetime;
+		this.author = author;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public String getDatetime() {
+		return datetime;
+	}
+	public void setDatetime(String datetime) {
+		this.datetime = datetime;
+	}
+	public user getAuthor() {
+		return author;
+	}
+	public void setAuthor(user author) {
+		this.author = author;
+	}
+	public Tweet(String text, user user) {
+		this.text = text;
+		this.author = user;
+		this.datetime = Instant.now().toString();
+	}
+	public void display() {
+		System.out.println("===================");
+		if(this.author.getLocation() = "No Location set!") {
+			System.out.println(this.author.getName() + ":");
+		}
+		else {
+			System.out.println(this.author.getName()+ " from " + this.author.getLocation()+ " :");	
+		}
+		System.out.println(this.author.getName()+ " from " + this.author.getLocation()+ " :");
+		System.out.println(this.text);
+		System.out.println("===================");
+	}
+}
+
+
+public class user {
+
+	
+	public  user(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	private String name;
+	private String location;
+	
+	public void user1(String name, String location){
+		this.name = name;
+		this.location = location;
+	}
+	public user(String name) {
+		this.name = name;
+		this.location = "chicago";
+	}
+	public Tweet tweet(String text) {
+		Tweet newTweet = new Tweet(text, this);
+		return newTweet;
+	}
+}
